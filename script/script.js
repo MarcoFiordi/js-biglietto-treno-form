@@ -37,15 +37,20 @@ function handleFormSubmit(event) {
 
     const basePrice = kilometers * pricePerKm;
     let finalPrice = basePrice;
+    let offer = 'Biglietto standard';
 
     if (age === 'minorenne') {
         finalPrice = basePrice * 0.8;
+        offer = 'Sconto minorenni';
     } else if (age === 'over65') {
         finalPrice = basePrice * 0.6;
+        offer = 'Sconto over 65';
     }
 
-    resultElement.innerHTML = `Il prezzo finale è € ${finalPrice.toFixed(2)}`;
-    
+    resultElement.innerHTML = `
+    <p><strong>Nome passeggero:</strong> ${name}</p>
+    <p><strong>Offerta:</strong> ${offer}</p>
+    <p><strong>Prezzo finale:</strong> € ${finalPrice.toFixed(2)}</p>`;
     
 }
 
