@@ -9,7 +9,14 @@ const pricePerKm = 0.21;
 
 form.addEventListener('submit', handleFormSubmit);
 
-function handleFormSubmit(event){
+function handleFormSubmit(event) {
     event.preventDefault();
+    const kilometers = parseFloat(kmInput.value);
+    const age = ageSelect.value;
+
+    console.log(kilometers);
+    console.log(age);
+    
+    
 }
 
