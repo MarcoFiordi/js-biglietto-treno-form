@@ -27,6 +27,15 @@ function handleFormSubmit(event) {
         return;
     }
 
+    const basePrice = kilometers * pricePerKm;
+    let finalPrice = basePrice;
+
+    if (age === 'minorenne') {
+        finalPrice = basePrice * 0.8;
+    } else if (age === 'over65') {
+        finalPrice = basePrice * 0.6;
+    }
+
     
     
     
