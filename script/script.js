@@ -1,6 +1,7 @@
 'use strict';
 
 const form = document.querySelector('#ticket-form');
+const nameInput = document.querySelector('#name');
 const kmInput = document.querySelector('#km');
 const ageSelect = document.querySelector('#age-range');
 const resultElement = document.querySelector('#result');
@@ -11,11 +12,18 @@ form.addEventListener('submit', handleFormSubmit);
 
 function handleFormSubmit(event) {
     event.preventDefault();
+
+    const name = nameInput.value.trim();
     const kilometers = parseFloat(kmInput.value);
     const age = ageSelect.value;
 
     // console.log(kilometers);
     // console.log(age);
+
+    if (name === ''){
+        resultElement.innerHTML = 'Inserisci nome e cognome';
+        return;
+    }
 
     if (isNaN(kilometers) || kilometers <= 0) {
         resultElement.innerHTML = 'Chilometri non validi';
