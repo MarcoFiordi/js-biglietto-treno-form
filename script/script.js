@@ -7,3 +7,9 @@ const resultElement = document.querySelector('#result');
 
 const pricePerKm = 0.21;
 
+form.addEventListener('submit', handleFormSubmit);
+
+function handleFormSubmit(event){
+    event.preventDefault();
+}
+
