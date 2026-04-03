@@ -14,8 +14,20 @@ function handleFormSubmit(event) {
     const kilometers = parseFloat(kmInput.value);
     const age = ageSelect.value;
 
-    console.log(kilometers);
-    console.log(age);
+    // console.log(kilometers);
+    // console.log(age);
+
+    if (isNaN(kilometers) || kilometers <= 0) {
+        resultElement.innerHTML = 'Chilometri non validi';
+        return;
+    }
+
+    if (age === '') {
+        resultElement.innerHTML = 'Seleziona una fascia di età';
+        return;
+    }
+
+    
     
     
 }
