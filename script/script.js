@@ -36,7 +36,7 @@ function handleFormSubmit(event) {
         finalPrice = basePrice * 0.6;
     }
 
-    
+    resultElement.innerHTML = `Il prezzo finale è € ${finalPrice.toFixed(2)}`;
     
     
 }
